@@ -1,0 +1,1013 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&family=IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+
+
+
+mark {
+    background: linear-gradient(to bottom, rgb(255, 204, 0) 0%,rgba(222,255,0,0.5) 60%,rgba(222,255,0,1) 100%);
+}
+
+/* ---------------------------------Body -----------------------------*/
+
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: consolas, sans-serif;
+    background-image: url("../img/kub.jpg")!important;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.home {
+    width: 100%;
+    height: 70vh;
+}
+
+
+
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 2rem;
+}
+
+.spacer {
+    height: 50vh; /* justera mellanrummet mellan sektionerna */
+}
+
+
+
+/* ----------------------------------Navigations bar ---------------------------*/
+
+ul li {
+    width: auto;
+    height: 65px;
+    margin: 3rem;
+}
+
+header {
+    background-color: transparent;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    padding: 7rem;
+}
+
+.logo img {
+    max-width: 23rem; /* Justera maxbredden efter önskad storlek */
+}
+
+.navbar ul li a {
+    color: rgba(181, 228, 236, 0.99); /* Standardfärg */
+    transition: color 0.3s ease; /* Övergångseffekt på färgändringen */
+    text-decoration: none;
+    color: #fff;
+
+
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+
+.logo::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: rgb(82, 130, 136);
+    margin-top: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.navbar.active {
+    top: 5vh; /* Visa fast meny när användaren scrollar uppåt */
+}
+
+.nav-links a:hover {
+    transform: scale(1.10);
+    color: #00d4ad;
+
+    -webkit-background-clip: initial; /* Återställ background-clip */
+    text-shadow: 3px 3px 3px rgba(26, 73, 73, 0.99);
+}
+
+
+.navbar {
+    position: fixed;
+    top: -80px; /* Göm menyn initialt */
+    left: 0;
+    right: 0;
+    background-color: transparent; /* Bakgrundsfärg på fast meny */
+    z-index: 999;
+    transition: transform 0.8s ease; /* Smidig övergång för menyn */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    -webkit-transition: all 0.7s ease;
+    font-size: 2rem;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
+
+}
+
+.nav-links {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 20px;
+
+}
+
+/* Övrig CSS-kod här ... */
+
+/* Responsiv design för både större och mindre skärmar */
+/* Övrig CSS-kod här ... */
+
+/* Responsiv design för mobilen (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+
+        display: block;
+        transition: color 0.3s;
+        padding: 1rem;
+    }
+
+    .nav-links a:hover {
+        color: #00d4ad;
+    }
+
+    .home {
+        height: 30vh;
+    }
+
+    .footer {
+        padding: 2rem;
+    }
+}
+
+
+/*nav bar slut*/
+
+/* ----- index hero section ------ */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Stil för hero-innehållet */
+.hero-content {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+/* Stil för text inom hero */
+.hero-inner {
+    flex: 1.5; /* Anpassa detta värde efter din layout */
+    padding: 20px;
+    text-align: left;
+}
+
+/* Stil för bilden inom hero */
+.hero-image {
+    flex: 1;
+    max-width: 50%; /*  bilden hälften så bred som dess förälder (hero-content) och texten. */
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Stil för hero-title och hero-description */
+.hero-title {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Stil för hero-buttons */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-button {
+    padding: 10px 20px;
+    background-color: #445f64;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #2e4b4f;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* hero end */
+
+
+.image {
+    float: left;
+    width: 80%; /* Justera beroende på önskat breddförhållande */
+    padding-right: 15px; /* Mellanrum mellan bilden och texten */
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    max-width: 100%; /* För att säkerställa att bilden inte överskrider sin ursprungliga bredd */
+}
+
+.info {
+    float: left;
+    width: 50%;
+
+}
+
+.motto-div {
+    background-color: #7f81fa;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+
+
+/*header button*/
+
+.container2 {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+strong {
+    font-weight: 600;
+}
+
+
+
+#teal {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: teal;!important;
+}
+
+
+/******** DIV MOLN SLUT*/
+
+/* Global styles */
+
+
+
+canvas {
+    overflow-clip-margin: unset;
+    overflow: clip;
+}
+
+
+
+section {
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/* ABOUT ME */
+
+/* Gemensam stil för sektioner */
+.about-section,
+.values-goals-hobbies-section {
+    background-color: transparent;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Stil för innehållsbehållare */
+.about-container,
+.values-goals-hobbies-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Stil för bild */
+.about-image img {
+    max-width: 200px; /* Justera storleken efter dina önskemål */
+    height: auto;
+    border-radius: 30%;
+    margin-right: 5rem;
+}
+
+/* Stil för textinnehåll */
+.about-content,
+.value,
+.goal,
+.hobby {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(1, 1, 16, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.74);
+    text-align: left;
+}
+
+.about-content h2,
+.value h2,
+.goal h2,
+.hobby h2 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.about-content p,
+.value p,
+.goal p,
+.hobby p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Responsivitet */
+@media screen and (max-width: 768px) {
+    .about-content,
+    .value,
+    .goal,
+    .hobby {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* END------------ ABOUT ME  */
+
+/* Projects section styles */
+
+.projects-title {
+    font-family: Consolas, sans-serif;
+    font-size: 2.7rem;
+    text-align: center;
+    color: white;
+}
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
+    gap: 20px; /* Adjust the gap between cards */
+    width: 120vh;
+    padding: 5rem;
+    border-radius: 1.2rem;
+    background: rgba(248, 250, 253, 0.29);
+    box-shadow: -2px -2px 5px rgba(250, 250, 250, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+    background-color: #ffffff; /* Card background color */
+    border: 1px solid #e0e0e0; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center text */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.9rem;
+}
+
+.project-title {
+    padding: 1rem;
+    font-weight: bolder;
+    font-family: Commissioner, sans serif;
+    font-size: 24px;
+    color: black;
+}
+
+.project-card:hover {
+    transform: scale(1.03); /* Scale the card slightly on hover */
+    box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.46s ease, box-shadow 0.3s ease;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #528288;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.project-link:hover {
+    background-color: #395a5e;
+}
+
+
+
+
+/* end of projects */
+
+
+
+
+/* Media queries */
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 26px;
+    }
+}
+
+
+
+@media (min-width: 768px){
+    #resize {
+        visibility: hidden !important;
+    }}
+
+
+    #resize {
+        z-index: 1;
+        top: 0;
+        position: fixed;
+        background: #0f0f0f;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+
+.title {
+    color: rgba(43, 93, 107, 0.99);
+    background-color: lightblue;
+    padding: 10px;
+}
+
+
+.col-md-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-md-4 img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+.whitespace {
+    width: 100%;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .whitespace {
+        display: none;
+    }
+}
+
+
+
+/*--------------- typewriter effect --------------- */
+.line {
+    width: 24em;
+    top: 90%;
+    margin: auto;
+    border-right: 2px solid rgb(225, 146, 221);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.typewriter h1 {
+    color: rgba(43, 93, 107, 0.99);
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .1em solid #00ffc4; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+            typing 3.5s steps(20, end),
+            blink-caret .9s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #47a491
+    }
+}
+
+.anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCussor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 54rem;
+    }
+}
+
+@media (max-width: 768px) {
+    @keyframes typewriter {
+        from {
+            width: 0;
+        }
+        to {
+            width: 17em;
+        }
+    }
+}
+
+@keyframes blinkTextCussor {
+    from {
+        border-right-color: rgb(72, 224, 203);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes fade_move_down {
+    0% {
+        transform: translate(0, -20px) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 20px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/*--------------- projects section --------------- */
+h6 {
+    text-align: center;
+}
+
+
+.project {
+    height: 500px;
+}
+
+
+
+/*--------------- work page --------------- */
+
+/*---------------about page --------------- */
+
+.about {
+    height: 500px;
+    margin-top: 120px;
+}
+
+
+
+
+
+/* ny*/
+
+/* rosa box*/
+
+.cursor {
+    padding: 30px 30px 0;
+    width: 60%;
+    height: 400px;
+    position: relative;
+    font-family: monospace;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #5e7ab9;
+    background: rgb(151, 188, 234);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.info {
+    width: 100%;
+    background: none;
+}
+
+
+
+@keyframes fade_move_down {
+    0% {
+        transform: translate(0, -20px) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 20px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/*--------------- projects section --------------- */
+
+
+/******************-Landing page*/
+#welcome-section {
+
+    background-color: transparent;
+
+}
+
+#welcome-section0 {
+    height: 100vh;
+    text-align: center;
+    padding: 200px;
+    background-color: transparent;
+
+}
+
+
+
+
+
+
+
+/*---------end my projects*/
+
+/*slut rosabox*/
+
+
+.features
+{
+    overflow:hidden;
+    padding:30px
+
+}
+
+.feat {
+    padding: 2vh;
+    box-sizing: border-box;
+}
+
+.feat p {
+    line-height: 1.5;
+}
+
+.features .feat
+{
+    float:left;
+    width:33.33333%;
+padding: 2vh;
+
+}
+
+.about-me
+{
+    background: transparent;
+    overflow:hidden;
+    margin-top:50px;
+}
+
+.about-me .image
+{
+    float:left;
+    width:78%;
+    padding-left: 28px;
+
+
+}
+
+.about-me .image img
+{
+    width:600px;
+
+    border-radius: 20px;
+}
+
+.about-me .info
+{
+    float:left;
+
+}
+
+.about-me .info .hobbies
+{
+    overflow:hidden;
+    padding-top:70px
+
+}
+
+.about-me .info .hobbies > div
+{
+    float:left;
+    width:50%;
+    min-height:100px
+}
+
+
+
+.buttone {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    background-color: #ff75a0;
+    color: #fff;
+}
+
+.buttone:hover {
+    background-color: #d7426c;
+    transform: scale(1.05);
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Stil för footer */
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    color: rgba(220, 234, 234, 0.99);
+    background-color: transparent;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    text-align: left;
+}
+
+.footer-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #087571;
+}
+
+.footer-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #f5f8f6;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-contact::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: rgb(82, 130, 136);
+    margin-top: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.footer-link:hover {
+    color: #4a9a91;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    font-size: 24px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Stil för stark text */
+.footer-text p strong {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fdfdff;
+}
+
+/* Stil för copyright-text */
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: rgba(220, 234, 234, 0.99);
+    font-family: Consolas, sans-serif;
+}
+
+/* Media Query för mindre skärmar */
+@media screen and (max-width: 768px) {
+
+    .footer {
+        background-color: transparent;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .footer-link {
+        font-size: 16px;
+    }
+
+    .social-icons li {
+        font-size: 24px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+}
