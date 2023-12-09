@@ -1,33 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner&family=IBM+Plex+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 
 
-
-
-mark {
-    background: linear-gradient(to bottom, rgb(255, 204, 0) 0%,rgba(222,255,0,0.5) 60%,rgba(222,255,0,1) 100%);
-}
-
-/* ---------------------------------Body -----------------------------*/
+/* ----------------------------Body -----------------------------*/
 
 
 body {
     margin: 0;
-    box-sizing: border-box;
-    font-family: consolas, sans-serif;
+    font-family: Consolas, sans-serif;
     background-image: url("../img/kub.jpg")!important;
     background-size: auto;
     background-repeat: no-repeat;
     background-color: transparent;
+    text-rendering: optimizeLegibility;
+}
+
+p {
+    font-family: Comissioner, sans-serif;
 }
 
 .home {
     width: 100%;
-    height: 70vh;
+    height: 100%;
 }
 
-
+.space {
+    width: 100%;
+    height: 70vh;
+}
 
 
 .section {
@@ -39,13 +39,13 @@ body {
     font-size: 2rem;
 }
 
-.spacer {
+.space {
     height: 50vh; /* justera mellanrummet mellan sektionerna */
 }
 
 
 
-/* ----------------------------------Navigations bar ---------------------------*/
+/* ---------------------Navigations bar ---------------------------*/
 
 ul li {
     width: auto;
@@ -79,8 +79,6 @@ header {
     transition: color 0.3s ease; /* Övergångseffekt på färgändringen */
     text-decoration: none;
     color: #fff;
-
-
 }
 
 .navbar.hidden {
@@ -107,7 +105,6 @@ header {
 .nav-links a:hover {
     transform: scale(1.10);
     color: #00d4ad;
-
     -webkit-background-clip: initial; /* Återställ background-clip */
     text-shadow: 3px 3px 3px rgba(26, 73, 73, 0.99);
 }
@@ -131,7 +128,6 @@ header {
     font-size: 2rem;
     font-family: Quicksand, sans-serif;
     text-align: center;
-
 }
 
 .nav-links {
@@ -149,12 +145,9 @@ header {
 
 }
 
-/* Övrig CSS-kod här ... */
 
-/* Responsiv design för både större och mindre skärmar */
-/* Övrig CSS-kod här ... */
 
-/* Responsiv design för mobilen (max-width: 768px) */
+/* ---- NAV MOBILE ----- */
 @media screen and (max-width: 768px) {
     .navbar {
         background-color: transparent;
@@ -210,18 +203,20 @@ header {
 }
 
 
-/*nav bar slut*/
+/* --------END NAVBAR -----------*/
 
-/* ----- index hero section ------ */
+/* ----- START HERO (index) ------ */
 
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    flex-direction: column; /* Centrera innehåll vertikalt och placera text under bilden i mobilversionen */
+    text-align: center; /* Centrera text horisontellt */
+    font-family: Comissioner, sans-serif;
 }
 
-/* Stil för hero-innehållet */
 .hero-content {
     max-width: 1200px;
     display: flex;
@@ -231,11 +226,13 @@ header {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
+    flex-direction: row; /* Återställ riktningen till horisontell för desktop-versionen */
 }
+
 
 /* Stil för text inom hero */
 .hero-inner {
-    flex: 1.5; /* Anpassa detta värde efter din layout */
+    flex: 1.5;
     padding: 20px;
     text-align: left;
 }
@@ -244,6 +241,7 @@ header {
 .hero-image {
     flex: 1;
     max-width: 50%; /*  bilden hälften så bred som dess förälder (hero-content) och texten. */
+    margin-bottom: 20px;
 }
 .hero-image img {
     max-width: 100%;
@@ -252,25 +250,26 @@ header {
     width: 100%;
 }
 
-/* Stil för hero-title och hero-description */
+/* hero-title and hero-description */
 .hero-title {
     font-size: 1.5rem;
     line-height: 1.4;
     color: #333;
     margin-bottom: 10px;
+
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.4;
     color: #555;
     margin-bottom: 20px;
 }
 
-/* Stil för hero-buttons */
+/* hero-buttons */
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .hero-button {
@@ -288,125 +287,47 @@ header {
 
 
 
-
+/* ----------- MOBILE HERO ------------- */
 @media screen and (max-width: 768px) {
     .hero-content {
-        max-width: 90%;
-        text-align: center;
+        flex-direction: column; /* Centrera innehåll vertikalt och placera text under bilden i mobilversionen */
+        text-align: center; /* Centrera text horisontellt */
     }
 
     .hero-title {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    /* mobile hero-description container */
+    .hero-description-container {
+        line-height: 1.5;
+        color: #555;
+        margin-bottom: 20px;
+        word-wrap: break-word; /* Tvinga textbrytning när texten inte får plats */
+        max-width: 100%; /* Begränsa maximal bredd till 100% av förälderelementet */
     }
 
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.7rem;
+        line-height: 1.5;
+        color: #555;
+        margin-bottom: 20px;
+        overflow: hidden;
+        white-space: pre-line;
+        float:left;
     }
 
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
     }
-}
-
-/* hero end */
-
-
-.image {
-    float: left;
-    width: 80%; /* Justera beroende på önskat breddförhållande */
-    padding-right: 15px; /* Mellanrum mellan bilden och texten */
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    max-width: 100%; /* För att säkerställa att bilden inte överskrider sin ursprungliga bredd */
-}
-
-.info {
-    float: left;
-    width: 50%;
 
 }
 
-.motto-div {
-    background-color: #7f81fa;
-    color: white;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-}
+/* ------------ END of HERO-------------- */
 
 
-
-/*header button*/
-
-.container2 {
-    width: 90%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-strong {
-    font-weight: 600;
-}
-
-
-
-#teal {
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    color: teal;!important;
-}
-
-
-/******** DIV MOLN SLUT*/
-
-/* Global styles */
-
-
-
-canvas {
-    overflow-clip-margin: unset;
-    overflow: clip;
-}
-
-
-
-section {
-    min-height: 50vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-}
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 50px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-/* ABOUT ME */
+/* ------------------ ABOUT ME PAGE ------------------------*/
 
 /* Gemensam stil för sektioner */
 .about-section,
@@ -417,7 +338,7 @@ section {
     text-align: center;
 }
 
-/* Stil för innehållsbehållare */
+/* innehållsbehållare */
 .about-container,
 .values-goals-hobbies-container {
     max-width: 1200px;
@@ -428,7 +349,7 @@ section {
     align-items: center;
 }
 
-/* Stil för bild */
+/* Selfie */
 .about-image img {
     max-width: 200px; /* Justera storleken efter dina önskemål */
     height: auto;
@@ -477,9 +398,9 @@ section {
     }
 }
 
-/* END------------ ABOUT ME  */
+/* ---------- END------------ ABOUT ME --------- */
 
-/* Projects section styles */
+/* ----START PROJECTS ---------- */
 
 .projects-title {
     font-family: Consolas, sans-serif;
@@ -505,6 +426,7 @@ section {
     padding: 20px; /* Padding inside the card */
     text-align: center; /* Center text */
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.5s;
 }
 
 .project-card img {
@@ -545,65 +467,54 @@ section {
 
 
 
+@media screen and (max-width: 768px) {
+    .project-container {
+        width: 20rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Visa två kolumner på mobilen */
+        gap: 20px; /* Justera gapet mellan korten */
+        padding: 1rem;
+    }
 
-/* end of projects */
+    .project-card {
+        width: 100%; /* Ta upp hela bredden på mobilen */
+        margin-bottom: 1rem;
+        padding: 0.2rem;
+        overflow: hidden;
+        transition: transform 0.5s;
+        height: auto;
+        flex-direction: column; /* Ändra riktningen för flexbox till kolumn */
+        align-items: flex-start;
+    }
 
+    .project-title {
+        font-size: 18px; /* Justera textstorlek för mobilen */
+        margin: 5px;
+    }
+    .project-image {
+        width: 100%; /* Se till att bilden är 100% av kortets bredd */
+    }
 
+    .project-description {
+        font-size: 16px; /* Justera textstorlek för mobilen */
+        margin: 10px;
+        overflow: auto;
+        white-space: unset;
+    }
 
+    .project-link {
+        font-size: 9px; /* Justera textstorlek för mobilen */
+        padding: 4px 8px;
+    }
 
-/* Media queries */
-@media (max-width: 768px) {
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
+    .project-title,
+    .project-description {
+        text-align: left; /* Justera textens alignment till vänster */
     }
 }
 
 
-
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 26px;
-    }
-}
-
-
-
-@media (min-width: 768px){
-    #resize {
-        visibility: hidden !important;
-    }}
-
-
-    #resize {
-        z-index: 1;
-        top: 0;
-        position: fixed;
-        background: #0f0f0f;
-        width: 100%;
-        height: 100%;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 1s ease-out;
-    }
-
-.title {
-    color: rgba(43, 93, 107, 0.99);
-    background-color: lightblue;
-    padding: 10px;
-}
-
-
-.col-md-4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.col-md-4 img {
-    max-width: 100%;
-    height: auto;
-}
-
+/* ----------END of projects -----------*/
 
 
 
@@ -622,120 +533,9 @@ section {
 
 
 
-/*--------------- typewriter effect --------------- */
-.line {
-    width: 24em;
-    top: 90%;
-    margin: auto;
-    border-right: 2px solid rgb(225, 146, 221);
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-}
-
-.typewriter h1 {
-    color: rgba(43, 93, 107, 0.99);
-    font-family: monospace;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .1em solid #00ffc4; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation:
-            typing 3.5s steps(20, end),
-            blink-caret .9s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #47a491
-    }
-}
-
-.anim-typewriter {
-    animation: typewriter 4s steps(40) 1s 1 normal both,
-    blinkTextCussor 500ms steps(40) infinite normal;
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 54rem;
-    }
-}
-
-@media (max-width: 768px) {
-    @keyframes typewriter {
-        from {
-            width: 0;
-        }
-        to {
-            width: 17em;
-        }
-    }
-}
-
-@keyframes blinkTextCussor {
-    from {
-        border-right-color: rgb(72, 224, 203);
-    }
-    to {
-        border-right-color: transparent;
-    }
-}
-
-@keyframes fade_move_down {
-    0% {
-        transform: translate(0, -20px) rotate(45deg);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(0, 20px) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-/*--------------- projects section --------------- */
-h6 {
-    text-align: center;
-}
 
 
-.project {
-    height: 500px;
-}
-
-
-
-/*--------------- work page --------------- */
-
-/*---------------about page --------------- */
-
-.about {
-    height: 500px;
-    margin-top: 120px;
-}
-
-
-
-
-
-/* ny*/
-
-/* rosa box*/
+/* blå box*/
 
 .cursor {
     padding: 30px 30px 0;
@@ -779,7 +579,7 @@ h6 {
 /*--------------- projects section --------------- */
 
 
-/******************-Landing page*/
+/* -------Landing page*/
 #welcome-section {
 
     background-color: transparent;
@@ -802,7 +602,7 @@ h6 {
 
 /*---------end my projects*/
 
-/*slut rosabox*/
+/* ---slut rosabox*/
 
 
 .features
@@ -841,8 +641,6 @@ padding: 2vh;
     float:left;
     width:78%;
     padding-left: 28px;
-
-
 }
 
 .about-me .image img
@@ -896,12 +694,12 @@ padding: 2vh;
 }
 
 
-/* Stil för footer */
+/* --------------- FOOTER SECTION---------------- */
 .footer {
-    padding: 40px 0;
+    padding: 20px 0;
     text-align: center;
     color: rgba(220, 234, 234, 0.99);
-    background-color: transparent;
+    background-color: transparent;!important;
 }
 
 .footer-content {
@@ -911,29 +709,31 @@ padding: 2vh;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: transparent;
 }
 
 .footer-section {
+    padding: 20px 0;
+    text-align: center;
     flex: 1;
     margin: 0 10px;
-    padding: 20px;
-    text-align: left;
+    background-color: transparent;
+
 }
 
 .footer-heading {
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: #087571;
 }
 
 .footer-link {
-    font-size: 18px;
+    font-size: 1rem;
     text-decoration: none;
     color: #f5f8f6;
     display: block;
     margin-bottom: 10px;
-    transition: color 0.3s;
 }
 
 .footer-contact::after {
@@ -956,17 +756,18 @@ padding: 2vh;
     list-style: none;
     padding: 0;
     margin: 0;
+    background-color: transparent;
 }
 
 .social-icons li {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-right: 10px;
     display: inline-block;
 }
 
 /* Stil för stark text */
 .footer-text p strong {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
     display: block;
     margin-top: 20px;
@@ -976,11 +777,12 @@ padding: 2vh;
 
 /* Stil för copyright-text */
 .copyright {
-    font-size: 12px;
+    font-size: 0.8rem;
     margin-top: 20px;
     margin-bottom: 0;
     color: rgba(220, 234, 234, 0.99);
     font-family: Consolas, sans-serif;
+    background-color: transparent;
 }
 
 /* Media Query för mindre skärmar */
@@ -988,26 +790,34 @@ padding: 2vh;
 
     .footer {
         background-color: transparent;
+        padding: 0;
+
     }
     .footer-content {
         flex-direction: column;
         align-items: center;
-    }
-
-    .footer-section {
-        margin: 0;
-        padding: 20px;
-        text-align: center;
         background-color: transparent;
     }
 
+    .footer-section {
+        margin: 10px 0; /* Lägg till mellanrum över och under varje sektion */
+        padding: 20px; /* Öka padding för att ge mer utrymme för innehållet */
+        text-align: center; /* Centrera texten i varje sektion */
+        background-color: transparent; /* Ta bort bakgrundsfärgen från sektionerna */
+    }
+
     .footer-link {
-        font-size: 16px;
+        font-size: 1.3rem;
     }
 
     .social-icons li {
-        font-size: 24px;
+        font-size: 1.2rem;
         margin-right: 10px;
         display: inline-block;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+        background-color: transparent;
     }
 }
