@@ -394,7 +394,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start; /* Ändra till flex-start för att få lika stora boxar */
+    align-items: center;  /* Ändra till flex-start för att få lika stora boxar */
 }
 
 /* Selfie */
