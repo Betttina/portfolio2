@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner&family=IBM+Plex+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
 
 
 /* ----------------------------Body -----------------------------*/
@@ -7,17 +8,21 @@
 
 body {
     margin: 0;
-    font-family: Consolas, sans-serif;
-    background-image: url("../img/kub.jpg")!important;
+    padding: 0;
+
+    font-family: "Comissioner", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    color: deeppink;
+    background-image: url("../img/kub.jpg");
     background-size: auto;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    text-rendering: optimizeLegibility;
+
+    width:100vw;
+    max-width:100%;
+    height:100vh;
+
 }
 
-p {
-    font-family: Comissioner, sans-serif;
-}
+
 
 .home {
     width: 100%;
@@ -30,18 +35,16 @@ p {
 }
 
 
-.section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    font-size: 2rem;
-}
+/*.section {*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    background-color: transparent;*/
+/*    font-size: 2rem;*/
+/*}*/
 
-.space {
-    height: 50vh; /* justera mellanrummet mellan sektionerna */
-}
+
 
 
 
@@ -211,22 +214,22 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 1rem;
     flex-direction: column; /* Centrera innehåll vertikalt och placera text under bilden i mobilversionen */
     text-align: center; /* Centrera text horisontellt */
-    font-family: Comissioner, sans-serif;
 }
 
 .hero-content {
     max-width: 1200px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.09);
     border-radius: 10px;
     flex-direction: row; /* Återställ riktningen till horisontell för desktop-versionen */
+    color:white;
+
 }
 
 
@@ -235,6 +238,7 @@ header {
     flex: 1.5;
     padding: 20px;
     text-align: left;
+    font-family: Consolas, sans-serif;
 }
 
 /* Stil för bilden inom hero */
@@ -250,20 +254,42 @@ header {
     width: 100%;
 }
 
-/* hero-title and hero-description */
 .hero-title {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    line-height: 1.2;
+    color: rgb(46, 75, 79);
+    margin-bottom: 1rem;
 
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.4;
-    color: #555;
+    color: rgba(220, 234, 234, 0.99);
     margin-bottom: 20px;
+    font-family: Consolas, sans-serif;
+    background-color: rgba(2, 72, 72, 0.6);
+    border-radius: 3rem;
+    border-end-start-radius: 7rem;
+    padding: 1rem;
+    text-align: center ;
+}
+
+.hero-description2 {
+    background-color: rgba(16, 87, 87, 0.7);
+    border-radius: 3rem;
+    border-start-end-radius: 5rem;
+    padding: 1rem;
+    text-align: center ;
+}
+
+.hero-description3 {
+    background-color: rgba(25, 56, 56, 0.3);
+    border-top-right-radius: 3rem;
+    border-bottom-left-radius: 4rem;
+    padding: 1rem;
+    text-align: center ;
+    margin: 1rem;
 }
 
 /* hero-buttons */
@@ -289,9 +315,17 @@ header {
 
 /* ----------- MOBILE HERO ------------- */
 @media screen and (max-width: 768px) {
+
+    .hero-description3 {
+        margin: 0.5rem;
+    }
+
+
     .hero-content {
         flex-direction: column; /* Centrera innehåll vertikalt och placera text under bilden i mobilversionen */
         text-align: center; /* Centrera text horisontellt */
+        margin: 0.5rem;
+        width: 100%;
     }
 
     .hero-title {
@@ -301,7 +335,7 @@ header {
     /* mobile hero-description container */
     .hero-description-container {
         line-height: 1.5;
-        color: #555;
+        color: #e5ecf5;
         margin-bottom: 20px;
         word-wrap: break-word; /* Tvinga textbrytning när texten inte får plats */
         max-width: 100%; /* Begränsa maximal bredd till 100% av förälderelementet */
@@ -310,7 +344,7 @@ header {
     .hero-description {
         font-size: 0.7rem;
         line-height: 1.5;
-        color: #555;
+        color: rgba(220, 234, 234, 0.99);
         margin-bottom: 20px;
         overflow: hidden;
         white-space: pre-line;
@@ -328,12 +362,10 @@ header {
 
 
 /* ------------------ ABOUT ME PAGE ------------------------*/
-
 /* Gemensam stil för sektioner */
 .about-section,
 .values-goals-hobbies-section {
     background-color: transparent;
-    color: #fff;
     padding: 40px 0;
     text-align: center;
 }
@@ -346,7 +378,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Ändra till flex-start för att få lika stora boxar */
 }
 
 /* Selfie */
@@ -374,33 +406,51 @@ header {
 .value h2,
 .goal h2,
 .hobby h2 {
-    font-size: 1.5rem;
-    color: #fff;
+    font-size: 3rem;
+    -webkit-text-stroke: 1px #73d4dc;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-content p,
 .value p,
 .goal p,
 .hobby p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     color: #ccc;
+    font-family: Consolas, sans-serif;
 }
 
-/* Responsivitet */
+/* Responsivitet ABOUT ME ----- */
 @media screen and (max-width: 768px) {
     .about-content,
     .value,
     .goal,
     .hobby {
-        flex: 1 1 100%;
-        margin-bottom: 20px;
+        flex: 1 1 calc(50% - 40px); /* Gör alla boxar lika stora på mobilen */
+        margin: 20px;
+    }
+
+    .about-image img {
+        max-width: 200px; /* Justera storleken efter dina önskemål */
+        height: auto;
+        border-radius: 30%;
+        margin-left: 5rem;
     }
 }
 
+
 /* ---------- END------------ ABOUT ME --------- */
 
-/* ----START PROJECTS ---------- */
+/* ----------------START MY PROJECTS ---------- */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Säkerställ att wrapper tar upp hela höjden på skärmen */
+    text-align: center;
+}
 
 .projects-title {
     font-family: Consolas, sans-serif;
@@ -417,6 +467,7 @@ header {
     border-radius: 1.2rem;
     background: rgba(248, 250, 253, 0.29);
     box-shadow: -2px -2px 5px rgba(250, 250, 250, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .project-card {
@@ -513,6 +564,12 @@ header {
     }
 }
 
+html, body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
 
 /* ----------END of projects -----------*/
 
@@ -600,102 +657,71 @@ header {
 
 
 
-/*---------end my projects*/
-
-/* ---slut rosabox*/
+/*---------end my projects --------- */
 
 
-.features
-{
-    overflow:hidden;
-    padding:30px
-
-}
-
-.feat {
-    padding: 2vh;
-    box-sizing: border-box;
-}
-
-.feat p {
-    line-height: 1.5;
-}
-
-.features .feat
-{
-    float:left;
-    width:33.33333%;
-padding: 2vh;
-
-}
-
-.about-me
-{
+.about-me {
     background: transparent;
-    overflow:hidden;
-    margin-top:50px;
+    overflow: hidden;
+    margin-top: 50px;
 }
 
-.about-me .image
-{
-    float:left;
-    width:78%;
+.about-me .image {
+    width: 78%;
     padding-left: 28px;
+    display: flex; /* Lägg till flex-display */
 }
 
-.about-me .image img
-{
-    width:600px;
-
+.about-me .image img {
+    width: 100%; /* Ändra bredden till 100% för att anpassa sig till förälderelementet */
     border-radius: 20px;
 }
 
-.about-me .info
-{
-    float:left;
-
+.about-me .info {
+    width: 22%; /* Justera bredden för att göra plats för texten */
+    padding: 20px; /* Lägg till padding för att skapa utrymme mellan bild och text */
 }
 
-.about-me .info .hobbies
-{
-    overflow:hidden;
-    padding-top:70px
-
+.about-me .info .hobbies {
+    overflow: hidden;
+    /* Ta bort padding-top: 70px; om den inte behövs */
 }
 
-.about-me .info .hobbies > div
-{
-    float:left;
-    width:50%;
-    min-height:100px
+.about-me .info .hobbies > div {
+    width: 50%;
+    min-height: 100px;
 }
 
+@media screen and (max-width: 768px) {
+    .about-me .image,
+    .about-me .info {
+        float: none;
+        width: 100%;
+        padding-left: 0;
+    }
 
+    .about-me .image img {
+        width: 100%;
+        border-radius: 20px;
+    }
 
-.buttone {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-    background-color: #ff75a0;
-    color: #fff;
+    .about-me .info .hobbies {
+        overflow: hidden;
+        padding-top: 20px; /* Anpassa toppmarginalen för bättre utrymme */
+    }
+
+    .about-me .info .hobbies > div {
+        width: 100%;
+        min-height: auto; /* Ta bort min-höjden på mobilversionen */
+        margin-bottom: 20px; /* Lägg till mellanrum mellan hobbyelementen */
+    }
 }
 
-.buttone:hover {
-    background-color: #d7426c;
-    transform: scale(1.05);
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 
 /* --------------- FOOTER SECTION---------------- */
 .footer {
+
     padding: 20px 0;
     text-align: center;
     color: rgba(220, 234, 234, 0.99);
@@ -785,8 +811,20 @@ padding: 2vh;
     background-color: transparent;
 }
 
-/* Media Query för mindre skärmar */
+/* -- MOBILE FOOTER -------- */
 @media screen and (max-width: 768px) {
+
+    .social-icons {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Centrera sociala medier-länkar */
+    .social-icons li {
+        text-align: center;
+        margin: 0 auto;
+    }
+
 
     .footer {
         background-color: transparent;
@@ -800,10 +838,10 @@ padding: 2vh;
     }
 
     .footer-section {
-        margin: 10px 0; /* Lägg till mellanrum över och under varje sektion */
-        padding: 20px; /* Öka padding för att ge mer utrymme för innehållet */
-        text-align: center; /* Centrera texten i varje sektion */
-        background-color: transparent; /* Ta bort bakgrundsfärgen från sektionerna */
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center; /* Centrera texten */
+
     }
 
     .footer-link {
@@ -819,5 +857,6 @@ padding: 2vh;
     .copyright {
         font-size: 0.7rem;
         background-color: transparent;
+        padding-bottom: 2rem;
     }
 }
