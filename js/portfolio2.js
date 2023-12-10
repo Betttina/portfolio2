@@ -21,7 +21,7 @@ window.onscroll = function() {
 }
 
 
-/*
+
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Här initierar du din "typing animation" (om den är en del av din webbplats)
 
 });
-*/
 
 
 

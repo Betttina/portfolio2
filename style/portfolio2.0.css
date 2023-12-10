@@ -5,20 +5,31 @@
 
 /* ----------------------------Body -----------------------------*/
 
-
+html {
+    height:100vh;
+}
 body {
-    margin: 0;
-    padding: 0;
+
 
     font-family: "Comissioner", "Helvetica Neue", sans-serif;
     font-size: 1rem;
-    color: deeppink;
+    color: rgba(0, 0, 0, 0.53);
     background-image: url("../img/kub.jpg");
-    background-size: auto;
-
+    /*background-size: 100%;*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
     width:100vw;
     max-width:100%;
-    height:100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*max-height: 100vh;*/
 
 }
 
@@ -224,8 +235,8 @@ header {
     display: flex;
     align-items: center;
     padding: 1rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.09);
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);*/
+    /*background-color: rgba(255, 255, 255, 0.09);*/
     border-radius: 10px;
     flex-direction: row; /* Återställ riktningen till horisontell för desktop-versionen */
     color:white;
@@ -257,8 +268,10 @@ header {
 .hero-title {
     font-size: 3rem;
     line-height: 1.2;
-    color: rgb(46, 75, 79);
     margin-bottom: 1rem;
+    text-align: center;
+    -webkit-text-stroke: 1px #e5ecf5;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -285,6 +298,8 @@ header {
 
 .hero-description3 {
     background-color: rgba(25, 56, 56, 0.3);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.34);
+
     border-top-right-radius: 3rem;
     border-bottom-left-radius: 4rem;
     padding: 1rem;
@@ -309,6 +324,7 @@ header {
 
 .hero-button:hover {
     background-color: #2e4b4f;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.34);
 }
 
 
@@ -415,14 +431,19 @@ header {
 .value p,
 .goal p,
 .hobby p {
-    font-size: 1.4rem;
+    font-size: 1rem;
     line-height: 1.5;
-    color: #ccc;
+    color: #bebfc0;
     font-family: Consolas, sans-serif;
 }
 
 /* Responsivitet ABOUT ME ----- */
 @media screen and (max-width: 768px) {
+
+    .about-container {
+
+    }
+
     .about-content,
     .value,
     .goal,
@@ -448,35 +469,40 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Säkerställ att wrapper tar upp hela höjden på skärmen */
+
     text-align: center;
 }
 
 .projects-title {
     font-family: Consolas, sans-serif;
-    font-size: 2.7rem;
+
     text-align: center;
-    color: white;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    -webkit-text-stroke: 2px #09F6D0;
+    -webkit-text-fill-color: transparent;
 }
 .project-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
     gap: 20px; /* Adjust the gap between cards */
-    width: 120vh;
-    padding: 5rem;
+    max-width: 1200px;
     border-radius: 1.2rem;
-    background: rgba(248, 250, 253, 0.29);
-    box-shadow: -2px -2px 5px rgba(250, 250, 250, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.1);
+    /*background: rgba(248, 250, 253, 0.2);*/
+    /*box-shadow: -2px -2px 5px rgba(250, 250, 250, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.1);*/
     text-align: center;
 }
 
 .project-card {
-    background-color: #ffffff; /* Card background color */
-    border: 1px solid #e0e0e0; /* Card border */
+    font-family: "Commissioner", sans-serif;
+    color: #082f33;
+    font-size: 1.2rem;
+    background-color: rgba(224, 229, 236, 0.26);
     border-radius: 8px; /* Rounded corners */
     padding: 20px; /* Padding inside the card */
     text-align: center; /* Center text */
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    box-shadow: 2px 4px 6px rgba(224, 229, 236, 0.26); /* shadow before hover project-card */
     transition: transform 0.5s;
 }
 
@@ -496,7 +522,7 @@ header {
 
 .project-card:hover {
     transform: scale(1.03); /* Scale the card slightly on hover */
-    box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 8px 12px rgba(26, 73, 73, 0.99);
     transition: transform 0.46s ease, box-shadow 0.3s ease;
 }
 
@@ -520,7 +546,7 @@ header {
 
 @media screen and (max-width: 768px) {
     .project-container {
-        width: 20rem;
+        width: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Visa två kolumner på mobilen */
         gap: 20px; /* Justera gapet mellan korten */
@@ -529,13 +555,13 @@ header {
 
     .project-card {
         width: 100%; /* Ta upp hela bredden på mobilen */
-        margin-bottom: 1rem;
-        padding: 0.2rem;
+        /*margin-bottom: 0.4rem;*/
+        padding: 0.3rem;
         overflow: hidden;
         transition: transform 0.5s;
         height: auto;
-        flex-direction: column; /* Ändra riktningen för flexbox till kolumn */
-        align-items: flex-start;
+        /*flex-direction: column; !* Ändra riktningen för flexbox till kolumn *!*/
+        /*align-items: flex-start;*/
     }
 
     .project-title {
@@ -564,12 +590,7 @@ header {
     }
 }
 
-html, body{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: 100%;
-}
+
 
 /* ----------END of projects -----------*/
 
@@ -605,8 +626,10 @@ html, body{
 .box {
     width: 100%;
     height: 100%;
-    border: 3px solid #5e7ab9;
-    background: rgb(151, 188, 234);
+    border: 3px solid rgba(26, 73, 73, 0.99);
+    border-top-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    background-color: rgba(16, 87, 87, 0.7);
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -707,7 +730,7 @@ html, body{
 
     .about-me .info .hobbies {
         overflow: hidden;
-        padding-top: 20px; /* Anpassa toppmarginalen för bättre utrymme */
+        padding-top: 20px; /* toppmarginalen för bättre utrymme */
     }
 
     .about-me .info .hobbies > div {
