@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-/*
+
 
 
 /!*cursor-effects*!/
@@ -192,7 +192,7 @@ function bubbleCursor(options) {
 
   init();
 }
-*/
+
 
 
 

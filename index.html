@@ -22,119 +22,130 @@
           rel="stylesheet"
   />
   <link rel="icon" type="image/png" href="img/minisal.png" sizes="16x16">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 
 <body>
 
-<!--HEADER + NAV -->
-<header>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="img/seallogo.png" alt="logo">
-      <a href="index.html"></a>
+<div class="container">
+  <!-- HEADER -->
+  <header class="key">
+    <!--<div class="instructionsbox">
+      <h2 class="instructions"> HOW TO BUILD AN ONLINE WEB DEVELOPER PORTFOLIO </h2>
+
+    </div>-->
+    <h3 class="headerClass"> --> HEADER</h3>
+    <h3 class="title"> Web developer <br>specialized in e-commerce </h3>
+    <div class="header-container">
+    <img src="img/ecommerce.png" class="pixel1" alt="pixel art ecommerce girl desktop">
+
+      <button id="bPrevious" onclick="bPrevious         ()"> About me </button>
+      <button id="bNext" onclick="bNext ()"> Work </button>
+
     </div>
-
-    <!--          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-    <!--            <span class="navbar-toggler-icon"></span>-->
-    <!--          </button>-->
-
-
-    <ul class="nav-links">
-      <li><a href="index.html">home</a></li>
-      <li><a href="work.html">projects</a></li>
-      <li><a href="aboutme.html">about</a></li>
-      <li><a href="contactme.html">contact</a></li>
-    </ul>
-  </nav>
-</header>
-<!-- end navbar-->
-
-<div class="space"></div>
-
-<section class="home">
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-inner">
-        <h1 class="hero-title">Welcome to my portfolio!</h1>
-        <div class="hero-description-container">
-          <div class="hero-description3">
-            <p>
-              Crafting impactful and visually striking design solutions is my
-              devotion. With a dedicated focus on branding and web development,
-              I specialize in creating websites that truly ✨ stand out and leave
-              an enduring impact. 🖱️</p></div>
-          <div class="hero-description3">
-            <p>
-              As a web development student 📚 with a specialized focus on
-              e-commerce, I combine my passion for innovative branding strategies,
-              seamless user experiences, and sustainable design practices to
-              create digital solutions that resonate. 🎨
-            </p>
-          </div>
-          <div class="hero-description3">
-            <p>
-              I have a keen interest in user experience (UX) 🖍️ and user interface
-              (UI) 🎭 design, as well as exploring how to create successful and
-              modern business ideas with a strong emphasis on 🌱 sustainability,
-              🦄 uniqueness and a 🤖 futuristic approach.
-            </p>
-          </div>
-        </div>
-
-
-        <div class="hero-buttons">
-          <a href="work.html" class="hero-button">Explore my work</a>
-          <a href="aboutme.html" class="hero-button">Read more about this mysterious woman</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="img/betti.jpg" alt="Bildbeskrivning" />
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="whitespace"></div>
-  <div class="whitespace"></div>
-  <div class="whitespace"></div>
-
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-contact">
-        <ul class="social-icons">
-          <p class="footer-heading">Connect with me 🚀</p>
-          <li><a href="mailto:hej@bettina.nu" class="footer-link"><i class="fa-regular fa-envelope"></i> hej@bettina.nu</a></li>
-          <li><a href="https://www.linkedin.com/bbettinatoth" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-          <li><a href="https://www.github.com/Betttina" class="footer-link"><i class="fa-brands fa-github"></i> Github</a></li>
-          <li><a href="https://www.figma.com/@bettobox" class="footer-link"><i class="fa-brands fa-figma"></i> Figma</a></li>
-          <li><a href="https://open.spotify.com/user/albinoe?si=16173d42eff44b42" class="footer-link"><i class="fa-brands fa-spotify"></i> Spotify</a></li>
-          <li><a href="https://discord.com/users/1154378906485399595" class="footer-link"><i class="fa-brands fa-discord"></i> Discord</a></li>
+    <!-- NAV -->
+    <nav class="navmobile">
+      <ul>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">My Portfolio</a></li>
+        <li><a href="#">My Services</a></li>
+        <li><a href="#">My Blog</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+      <nav class="navdesktop">
+        <ul>
+          <li><a href="#">About Me</a></li>
+          <li><a href="#">My Portfolio</a></li>
+          <li><a href="#">My Services</a></li>
+          <li><a href="#">My Blog</a></li>
+          <li><a href="#">Contacts</a></li>
         </ul>
-      </div>
+        <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2012/10/threelines.png" class="hamb" alt="hamburguer">
+      </nav>
+  </header>
+  <!-- MAIN -->
+  <main class="key">
+    <h3 class="mainClass"> --> MAIN</h3>
+    <p class="main1">text <br> The core value of your work/brand. <br> <img src="img/profilbild.jpg" class="profilbild" alt="selfie"> You can add some image or a photo of yourself that pass to the viewer the idea that you intend.</p>
+
+
+  </main>
+  <!-- ASIDE -->
+  <aside class="key">
+    <h3 class="asideClass"> --> ASIDE </br> SECTION</h3>
+    <p class="aside1">started with Windows 95 and now we are here.</p>
+
+    <div class="hero-description">
+    <p> I'm intrested in ux, ui and how to create successfull and modern business ideas with sustainability, uniqueness and futuristic approach that my clients customers will love.
+      All I really care about is make my client ideas to reality with obvious and clear design, including improved accessibility and simplicity for the users.
+      For me, my passion is truly to come up with solutions though thorough research, cooperation and technology. These are subjects I can talk about for hours.
+
+      I also have several years of previous experience from working in well-known retail and warehouses. That combinded with my geeky interest in computers and development led me where I am today!
+
+
+      I have experience in HTML, CSS, Javascript, Node.JS, Express.JS, React, PHP with Laragon and Wordpress-development.
+
+      I am based in south Sweden.
+      What kind of work i do: E-commerce-, business- and portfolio websites as web-applications.
+
+      I of course always include continuous improvement and testing, because I am an expert in finding errors at a detailed level and at the same time getting a good overview on an overall level.  I always have competitors, marketing and seo in mind.
+
+      My hobbies include all aspects of web development, reading books and paint paintings in watercolor. I enjoy talking long walks in nature and cook from scratch. I really love web design a lot so I surf a lot, hihi.
+
+      My goals are creating solutions users will be pleased by.
+
+      Creative soul with hyperactive tendencies.</p></div>
+  </aside>
+  <section class="key">
+    <h3 class="sectionClass"> --> SECTION</h3>
+    <div class="section1">
+      <article>
+        <p class="art">@article 1</p>
+        <div class="col-md-4">
+          <img class="img-responsive pic" src="img/kor.png" alt="Project 1" />
+          <h3 class="text-uppercase">Flowers</h3>
+          <p>
+            <a href="#top">Link 1</a>
+          </p>
+        </div>
+      </article>
+      <article>
+        <p class="art">@article 2</p>
+      </article>
+      <article>
+        <p class="art">@article 3</p>
+      </article>
+      <article>
+        <p class="art">@article 4</p>
+      </article>
     </div>
-    <p>
-      The only boundary I take into account is the line between the
-      collective and the individual<br> — the interface.
-    </p>
-    <p class="copyright">Copyright © Bettina.nu 2023 <br> All Rights Reserved</p>
+  </section>
+
+
+
+
+  <div class="section2"><p>Text</p></div>
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="key">
+    <h3 class="footerClass"> --> FOOTER</h3>
+    <div class="footer1">
+      <ul class="footer-social-media">
+        <li class="li-sm"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" /></li>
+        <li class="li-sm"><img src="https://img.icons8.com/color/48/000000/facebook.png" /></li>
+        <li class="li-sm"><img src="https://img.icons8.com/color/48/000000/pinterest--v1.png" /></li>
+      </ul>
+      <p class="footer-note">© 2021 "your company". All rights reserved</p>
+    </div>
   </footer>
-
-
-</section>
-
-
-<script src="js/portfolio2.js"></script>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Bootstrap JavaScript (Popper.js ingår också) -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+</div>
 </body>
+
 </html>

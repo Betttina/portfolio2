@@ -1,305 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner&family=IBM+Plex+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
-
-
-/* ----------------------------Body -----------------------------*/
-
-html {
-    height:100vh;
-}
-body {
-
-
-    font-family: "Comissioner", "Helvetica Neue", sans-serif;
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.53);
-    background-image: url("../img/kub.jpg");
-    /*background-size: 100%;*/
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    width:100vw;
-    max-width:100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*max-height: 100vh;*/
-
-}
-
-
-
-.home {
-    width: 100%;
-    height: 100%;
-}
-
-.space {
-    width: 100%;
-    height: 70vh;
-}
-
-
-/*.section {*/
-/*    height: 100vh;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    background-color: transparent;*/
-/*    font-size: 2rem;*/
-/*}*/
-
-
-
-
-
-/* ---------------------Navigations bar ---------------------------*/
-
-ul li {
-    width: auto;
-    height: 65px;
-    margin: 3rem;
-}
-
-header {
-    background-color: transparent;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    margin-bottom: 2rem;
-    padding: 7rem;
-}
-
-.logo img {
-    max-width: 23rem; /* Justera maxbredden efter önskad storlek */
-}
-
-.navbar ul li a {
-    color: rgba(181, 228, 236, 0.99); /* Standardfärg */
-    transition: color 0.3s ease; /* Övergångseffekt på färgändringen */
-    text-decoration: none;
-    color: #fff;
-}
-
-.navbar.hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-}
-
-
-.logo::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: rgb(82, 130, 136);
-    margin-top: 8px;
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-.navbar.active {
-    top: 5vh; /* Visa fast meny när användaren scrollar uppåt */
-}
-
-.nav-links a:hover {
-    transform: scale(1.10);
-    color: #00d4ad;
-    -webkit-background-clip: initial; /* Återställ background-clip */
-    text-shadow: 3px 3px 3px rgba(26, 73, 73, 0.99);
-}
-
-
-.navbar {
-    position: fixed;
-    top: -80px; /* Göm menyn initialt */
-    left: 0;
-    right: 0;
-    background-color: transparent; /* Bakgrundsfärg på fast meny */
-    z-index: 999;
-    transition: transform 0.8s ease; /* Smidig övergång för menyn */
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-    -webkit-transition: all 0.7s ease;
-    font-size: 2rem;
-    font-family: Quicksand, sans-serif;
-    text-align: center;
-}
-
-.nav-links {
-    width: 100%;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-links li {
-    margin: 0 20px;
-
-}
-
-
-
-/* ---- NAV MOBILE ----- */
-@media screen and (max-width: 768px) {
-    .navbar {
-        background-color: transparent;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 0;
-    }
-
-    .logo {
-        margin-bottom: 20px;
-        padding: 1rem;
-    }
-
-    .nav-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-
-        display: block;
-        transition: color 0.3s;
-        padding: 1rem;
-    }
-
-    .nav-links a:hover {
-        color: #00d4ad;
-    }
-
-    .home {
-        height: 30vh;
-    }
-
-    .footer {
-        padding: 2rem;
-    }
-}
-
-
-/* --------END NAVBAR -----------*/
-
-/* ----- START HERO (index) ------ */
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    flex-direction: column; /* Centrera innehåll vertikalt och placera text under bilden i mobilversionen */
-    text-align: center; /* Centrera text horisontellt */
-}
-
-.hero-content {
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);*/
-    /*background-color: rgba(255, 255, 255, 0.09);*/
-    border-radius: 10px;
-    flex-direction: row; /* Återställ riktningen till horisontell för desktop-versionen */
-    color:white;
-
-}
-
-
-/* Stil för text inom hero */
-.hero-inner {
-    flex: 1.5;
-    padding: 20px;
-    text-align: left;
-    font-family: Consolas, sans-serif;
-}
-
-/* Stil för bilden inom hero */
-.hero-image {
-    flex: 1;
-    max-width: 50%; /*  bilden hälften så bred som dess förälder (hero-content) och texten. */
-    margin-bottom: 20px;
-}
-.hero-image img {
+/*BODY*/
+.pic {
+    display: inline-block;
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    width: 100%;
+    padding: 4px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
-.hero-title {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    text-align: center;
-    -webkit-text-stroke: 1px #e5ecf5;
-    -webkit-text-fill-color: transparent;
+.pic:hover {
+    box-shadow: 10px 10px 5px grey;
+}
 
+
+* {
+    box-sizing: border-box;
+    cursor: pointer;
+}
+body {
+    width: auto;
+    font-family: playfair, serif, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    align-items: center;
+}
+.instructionsbox {
+
+    text-align: center;
+    padding: 2rem 0;
+    justify-content: center;
+    grid-area: inst;
+    font-size: 1rem;
+    background: linear-gradient(#4a6163, #F9FAF4);
+    color: #f9faf4;
+
+    font-stretch: expanded;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+a:visited {
+    color: #F9FAF4;
+}
+button {
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin: 0rem 1rem;
+    padding: 0.5rem;
+    color: #4a6163;
+    border: 2px solid grey;
+    font-family: arial;
+    box-shadow: 5px 5px;
+}
+
+/* WIREFRAME STRUCTURE*/
+
+
+.container {
+    display: grid;
+    grid-template-row: auto auto auto auto auto;
+    grid-template-column: 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "section"
+    "footer";
+    background: linear-gradient(to top, transparent, #f9faf4), url("https://images.unsplash.com/photo-1687093777245-bc60c636ddf0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #f9faf4;
+    margin: 0 2rem;
+}
+
+/* MAIN / KEY ELEMENTS WITHIN THE PAGE */
+.header-container img{
+    float: right;
+}
+.pixel1 {
+    height: 20rem;
+    width: 30rem;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    line-height: 1.4;
-    color: rgba(220, 234, 234, 0.99);
-    margin-bottom: 20px;
-    font-family: Consolas, sans-serif;
-    background-color: rgba(2, 72, 72, 0.6);
-    border-radius: 3rem;
-    border-end-start-radius: 7rem;
-    padding: 1rem;
-    text-align: center ;
-}
-
-.hero-description2 {
-    background-color: rgba(16, 87, 87, 0.7);
-    border-radius: 3rem;
-    border-start-end-radius: 5rem;
-    padding: 1rem;
-    text-align: center ;
-}
-
-.hero-description3 {
     background-color: rgba(25, 56, 56, 0.3);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.34);
-
     border-top-right-radius: 3rem;
     border-bottom-left-radius: 4rem;
     padding: 1rem;
@@ -307,579 +99,248 @@ header {
     margin: 1rem;
 }
 
-/* hero-buttons */
-.hero-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.hero-button {
-    padding: 10px 20px;
-    background-color: #445f64;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.hero-button:hover {
-    background-color: #2e4b4f;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.34);
-}
-
-
-
-/* ----------- MOBILE HERO ------------- */
-@media screen and (max-width: 768px) {
-
-    .hero-description3 {
-        margin: 0.5rem;
-    }
-
-
-    .hero-content {
-        flex-direction: column; /* Centrera innehåll vertikalt och placera text under bilden i mobilversionen */
-        text-align: center; /* Centrera text horisontellt */
-        margin: 0.5rem;
-        width: 100%;
-    }
-
-    .hero-title {
-        font-size: 1.5rem;
-    }
-
-    /* mobile hero-description container */
-    .hero-description-container {
-        line-height: 1.5;
-        color: #e5ecf5;
-        margin-bottom: 20px;
-        word-wrap: break-word; /* Tvinga textbrytning när texten inte får plats */
-        max-width: 100%; /* Begränsa maximal bredd till 100% av förälderelementet */
-    }
-
-    .hero-description {
-        font-size: 0.7rem;
-        line-height: 1.5;
-        color: rgba(220, 234, 234, 0.99);
-        margin-bottom: 20px;
-        overflow: hidden;
-        white-space: pre-line;
-        float:left;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-}
-
-/* ------------ END of HERO-------------- */
-
-
-/* ------------------ ABOUT ME PAGE ------------------------*/
-/* Gemensam stil för sektioner */
-.about-section,
-.values-goals-hobbies-section {
-    background-color: transparent;
-    padding: 40px 0;
-    text-align: center;
-}
-
-/* innehållsbehållare */
-.about-container,
-.values-goals-hobbies-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;  /* Ändra till flex-start för att få lika stora boxar */
-}
-
-/* Selfie */
-.about-image img {
-    max-width: 200px; /* Justera storleken efter dina önskemål */
-    height: auto;
-    border-radius: 30%;
-    margin-right: 5rem;
-}
-
-/* Stil för textinnehåll */
-.about-content,
-.value,
-.goal,
-.hobby {
-    flex: 1;
-    padding: 20px;
-    background-color: rgba(1, 1, 16, 0.3);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.74);
-    text-align: left;
-}
-
-.about-content h2,
-.value h2,
-.goal h2,
-.hobby h2 {
-    font-size: 3rem;
-    -webkit-text-stroke: 1px #73d4dc;
-    -webkit-text-fill-color: transparent;
-}
-
-.about-content p,
-.value p,
-.goal p,
-.hobby p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #bebfc0;
-    font-family: Consolas, sans-serif;
-}
-
-/* Responsivitet ABOUT ME ----- */
-@media screen and (max-width: 768px) {
-
-    .about-container {
-
-    }
-
-    .about-content,
-    .value,
-    .goal,
-    .hobby {
-        flex: 1 1 calc(50% - 40px); /* Gör alla boxar lika stora på mobilen */
-        margin: 20px;
-    }
-
-    .about-image img {
-        max-width: 200px; /* Justera storleken efter dina önskemål */
-        height: auto;
-        border-radius: 30%;
-        margin-left: 5rem;
-    }
-}
-
-
-/* ---------- END------------ ABOUT ME --------- */
-
-/* ----------------START MY PROJECTS ---------- */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-.projects-title {
-    font-family: Consolas, sans-serif;
-
-    text-align: center;
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    -webkit-text-stroke: 2px #09F6D0;
-    -webkit-text-fill-color: transparent;
-}
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
-    gap: 20px; /* Adjust the gap between cards */
-    max-width: 1200px;
-    border-radius: 1.2rem;
-    /*background: rgba(248, 250, 253, 0.2);*/
-    /*box-shadow: -2px -2px 5px rgba(250, 250, 250, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.1);*/
-    text-align: center;
-}
-
-.project-card {
-    font-family: "Commissioner", sans-serif;
-    color: #082f33;
-    font-size: 1.2rem;
-    background-color: rgba(224, 229, 236, 0.26);
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the card */
-    text-align: center; /* Center text */
-    box-shadow: 2px 4px 6px rgba(224, 229, 236, 0.26); /* shadow before hover project-card */
-    transition: transform 0.5s;
-}
-
-.project-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.9rem;
-}
-
-.project-title {
-    padding: 1rem;
-    font-weight: bolder;
-    font-family: Commissioner, sans serif;
-    font-size: 24px;
+.hero-description p {
     color: black;
 }
 
-.project-card:hover {
-    transform: scale(1.03); /* Scale the card slightly on hover */
-    box-shadow: 1px 8px 12px rgba(26, 73, 73, 0.99);
-    transition: transform 0.46s ease, box-shadow 0.3s ease;
+.profilbild {
+    height: 14rem;
+    width: 14rem;
+    border-radius: 2rem;
 }
 
-.project-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    text-decoration: none;
-    background-color: #528288;
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+.key {
+    color: #4a6163;
+    font-family: roboto, serif;
+    border: 5px solid #F9FAF4;
+    text-align: center;
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+aside {
+    grid-area: aside;
+}
+section {
+    grid-area: section;
+}
+footer {
+    grid-area: footer;
 }
 
-.project-link:hover {
-    background-color: #395a5e;
-}
+/* CONTENT STYLE
 
+/* HEADER*/
 
-
-@media screen and (max-width: 768px) {
-    .project-container {
-        width: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Visa två kolumner på mobilen */
-        gap: 20px; /* Justera gapet mellan korten */
-        padding: 1rem;
-    }
-
-    .project-card {
-        width: 100%; /* Ta upp hela bredden på mobilen */
-        /*margin-bottom: 0.4rem;*/
-        padding: 0.3rem;
-        overflow: hidden;
-        transition: transform 0.5s;
-        height: auto;
-        /*flex-direction: column; !* Ändra riktningen för flexbox till kolumn *!*/
-        /*align-items: flex-start;*/
-    }
-
-    .project-title {
-        font-size: 18px; /* Justera textstorlek för mobilen */
-        margin: 5px;
-    }
-    .project-image {
-        width: 100%; /* Se till att bilden är 100% av kortets bredd */
-    }
-
-    .project-description {
-        font-size: 16px; /* Justera textstorlek för mobilen */
-        margin: 10px;
-        overflow: auto;
-        white-space: unset;
-    }
-
-    .project-link {
-        font-size: 9px; /* Justera textstorlek för mobilen */
-        padding: 4px 8px;
-    }
-
-    .project-title,
-    .project-description {
-        text-align: left; /* Justera textens alignment till vänster */
-    }
-}
-
-
-
-/* ----------END of projects -----------*/
-
-
-
-
-
-.whitespace {
-    width: 100%;
-    height: 50px;
-}
-
-@media (max-width: 768px) {
-    .whitespace {
-        display: none;
-    }
-}
-
-
-
-
-
-/* blå box*/
-
-.cursor {
-    padding: 30px 30px 0;
-    width: 60%;
-    height: 400px;
-    position: relative;
-    font-family: monospace;
-}
-
-.box {
-    width: 100%;
-    height: 100%;
-    border: 3px solid rgba(26, 73, 73, 0.99);
-    border-top-right-radius: 3rem;
-    border-bottom-left-radius: 3rem;
-    background-color: rgba(16, 87, 87, 0.7);
+header {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+}
+.title {
+    font-family: Consolas, sans-serif;
+    color: rgba(245, 66, 163, 0.99);
+    margin: 5rem;
+    font-weight: 1000;
+    font-size: 3rem;
+    text-align: left;
+    text-shadow: 2px 2px #395a5e;
+    line-height: 1.2;
+    -webkit-text-stroke: 1px rgba(26, 73, 73, 0.99);
+    -webkit-text-fill-color: transparent;
 }
 
-.info {
-    width: 100%;
-    background: none;
+/* NAV MOBILE */
+
+.navdesktop {
+    display: none;
 }
 
-
-
-@keyframes fade_move_down {
-    0% {
-        transform: translate(0, -20px) rotate(45deg);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(0, 20px) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-/*--------------- projects section --------------- */
-
-
-/* -------Landing page*/
-#welcome-section {
-
-    background-color: transparent;
-
-}
-
-#welcome-section0 {
-    height: 100vh;
-    text-align: center;
-    padding: 200px;
-    background-color: transparent;
-
-}
-
-
-
-
-
-
-
-/*---------end my projects --------- */
-
-
-.about-me {
-    background: transparent;
-    overflow: hidden;
-    margin-top: 50px;
-}
-
-.about-me .image {
-    width: 78%;
-    padding-left: 28px;
-    display: flex; /* Lägg till flex-display */
-}
-
-.about-me .image img {
-    width: 100%; /* Ändra bredden till 100% för att anpassa sig till förälderelementet */
-    border-radius: 20px;
-}
-
-.about-me .info {
-    width: 22%; /* Justera bredden för att göra plats för texten */
-    padding: 20px; /* Lägg till padding för att skapa utrymme mellan bild och text */
-}
-
-.about-me .info .hobbies {
-    overflow: hidden;
-    /* Ta bort padding-top: 70px; om den inte behövs */
-}
-
-.about-me .info .hobbies > div {
-    width: 50%;
-    min-height: 100px;
-}
-
-@media screen and (max-width: 768px) {
-    .about-me .image,
-    .about-me .info {
-        float: none;
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .about-me .image img {
-        width: 100%;
-        border-radius: 20px;
-    }
-
-    .about-me .info .hobbies {
-        overflow: hidden;
-        padding-top: 20px; /* toppmarginalen för bättre utrymme */
-    }
-
-    .about-me .info .hobbies > div {
-        width: 100%;
-        min-height: auto; /* Ta bort min-höjden på mobilversionen */
-        margin-bottom: 20px; /* Lägg till mellanrum mellan hobbyelementen */
-    }
-}
-
-
-
-/* --------------- FOOTER SECTION---------------- */
-.footer {
-
-    padding: 20px 0;
-    text-align: center;
-    color: rgba(220, 234, 234, 0.99);
-    background-color: transparent;!important;
-}
-
-.footer-content {
+.navmobile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: transparent;
 }
 
-.footer-section {
-    padding: 20px 0;
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
-    background-color: transparent;
-
-}
-
-.footer-heading {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #087571;
-}
-
-.footer-link {
-    font-size: 1rem;
-    text-decoration: none;
-    color: #f5f8f6;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.footer-contact::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: rgb(82, 130, 136);
-    margin-top: 8px;
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
-.footer-link:hover {
-    color: #4a9a91;
-}
-
-.social-icons {
+.navmobile ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
+    display: flex;
+    flex-direction: column;
 }
-
-.social-icons li {
+.navmobile li {
+    margin: 0.5rem 2rem;
+    font-weight: 00;
     font-size: 1.5rem;
-    margin-right: 10px;
-    display: inline-block;
+    color: #4a6163;
+    text-shadow: 1.5px 1.5px #4A6163;
+    align-content: center;
 }
 
-/* Stil för stark text */
-.footer-text p strong {
-    font-size: 1.2rem;
-    font-weight: bold;
+/*   MENU  */
+.hamb {
+    width: 10vw;
+    height: 10vh;
+}
+
+/*  MAIN */
+
+.main1 {
     display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #fdfdff;
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: playfair, serif;
+    color: #4a6163;
+    margin: 2.5rem 2.5rem;
+    text-shadow: 1px 1px #F9FAF4;
 }
 
-/* Stil för copyright-text */
-.copyright {
-    font-size: 0.8rem;
-    margin-top: 20px;
-    margin-bottom: 0;
-    color: rgba(220, 234, 234, 0.99);
-    font-family: Consolas, sans-serif;
-    background-color: transparent;
+/*  ASIDE - SIDE MENU OR ADVERTISEMENT SPACE*/
+.aside1 {
+    display: block;
+    margin: 2.5rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    word-wrap: break-word;
+    color: #4a6163;
 }
 
-/* -- MOBILE FOOTER -------- */
-@media screen and (max-width: 768px) {
+/* SECTION */
+.section1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
-    .social-icons {
-        margin: 0;
-        padding: 0;
+.section2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+article {
+    width: 40%;
+    background-color: #FFC94B;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 0.5rem;
+}
+.art {
+    font-weight: 600;
+    align-text: center;
+    color: #4a6163;
+}
+
+/* FOOTER  */
+
+footer {
+    color: #F9FAF4;
+}
+
+.footer1 {
+    display: flex;
+    flex-direction: column;
+}
+.footer-social-media {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+}
+.footer-note {
+    text-align: center;
+    color: #F9FAF4;
+}
+.li-sm {
+    width: 2rem;
+    height: 2rem;
+    margin: 2rem;
+}
+
+/* RESPONSIVE DESIGN FOR DESKTOP */
+
+@media only screen and (min-width: 812px) {
+    .container {
+        display: grid;
+        grid-template-row: auto auto auto auto;
+        grid-template-column: 90vw auto;
+        grid-template-areas:
+      "header header"
+      "main aside"
+      "section aside"
+      "footer footer";
     }
 
-    /* Centrera sociala medier-länkar */
-    .social-icons li {
-        text-align: center;
-        margin: 0 auto;
+    header {
+        grid-area: header;
     }
 
-
-    .footer {
-        background-color: transparent;
-        padding: 0;
-
+    main {
+        grid-area: main;
     }
-    .footer-content {
+
+    aside {
+        grid-area: aside;
+    }
+
+    section {
+        grid-area: section;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    /* DEFINITION OF CONTENTS INSIDE MAIN HTMLS */
+    header {
+        display: flex;
         flex-direction: column;
+    }
+
+    .navmobile ul {
+        display: none;
+    }
+
+    .navdesktop {
+        display: flex;
+        list-style: none;
         align-items: center;
-        background-color: transparent;
+        justify-content: center;
     }
 
-    .footer-section {
-        margin: 10px 0;
-        padding: 10px;
-        text-align: center; /* Centrera texten */
-
+    .navdesktop ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
     }
 
-    .footer-link {
-        font-size: 1.3rem;
+    .navdesktop > ul > li {
+        margin: 0.5rem 2rem;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #4a6163;
     }
 
-    .social-icons li {
-        font-size: 1.2rem;
-        margin-right: 10px;
-        display: inline-block;
+    .hamb {
+        display: none;
     }
 
-    .copyright {
-        font-size: 0.7rem;
-        background-color: transparent;
-        padding-bottom: 2rem;
+    article {
+        width: 20vw;
     }
 }
+
+/*COLLORS
+#F9FAF4 WHITE SMOKE
+#4A6163 DEEP SPACE SPARKLE
+#F9A66C SANDY BROWNE
+#FFC94B PASTEL ORANG
+#F17A7E LIGHT CORAL
+https://graphicmama.com/blog/website-color-schemes/
+*/
